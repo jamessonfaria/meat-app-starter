@@ -1,0 +1,24 @@
+<!-- INíCIO do CONTEÚDO -->
+<section class="content-header">
+  <h1>
+    Todos os Restaurantes
+  </h1>
+</section>
+
+
+<section class="content">
+
+  <div class="row">
+    <div *ngFor="let rest of restaurants" class="col-sm-6 col-xs-12">
+
+      <mt-restaurant [restaurant]="rest"></mt-restaurant>
+
+      <!-- /.info-box -->
+    </div>
+    <!-- /.col -->
+
+  </div>
+
+</section>
+
+<!-- FIM  do CONTEÚDO -->
