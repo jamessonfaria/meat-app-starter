@@ -16,9 +16,15 @@ export class OrderComponent implements OnInit {
     {label: 'Cartão de Crédito', value: 'CRE'},
   ]
 
+  delivery: number = 8
+
   constructor(private orderService: OrderService) { }
 
   ngOnInit() {
+  }
+
+  itemsValue(){
+    return this.orderService.itemsValue()
   }
 
   cartItems(){
