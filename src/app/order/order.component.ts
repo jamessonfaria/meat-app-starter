@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { CartItem } from './../restaurant-detail/shopping-cart/cart-item.model';
 import { OrderService } from './order.service';
@@ -20,7 +21,10 @@ export class OrderComponent implements OnInit {
 
   delivery: number = 8
 
-  constructor(private orderService: OrderService) { }
+  constructor(
+    private orderService: OrderService, 
+    private router: Router
+  ) { }
 
   ngOnInit() {
   }
@@ -49,6 +53,7 @@ export class OrderComponent implements OnInit {
     order.orderItems = this.cartItems()
       .map((item: CartItem) => new OrderItem(item.quantity, item.menuItem.id))
     this.orderService.checkOrder(order).subscribe((orderId: string) => {
+      this.router.navigate(['/order-sumary'])
       console.log(`Compra concluida: ${orderId}`)
       this.orderService.clear()
     })

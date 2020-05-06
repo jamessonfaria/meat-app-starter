@@ -1,3 +1,4 @@
+import { OrderSumaryComponent } from './order-sumary/order-sumary.component';
 import { OrderComponent } from './order/order.component';
 import { Routes } from "@angular/router";
 
@@ -18,5 +19,6 @@ export const ROUTES: Routes = [
             {path: 'menu', component: MenuComponent},
             {path: 'reviews', component: ReviewsComponent}
         ]},
-    { path: 'order', component: OrderComponent}
+    { path: 'order', component: OrderComponent},
+    { path: 'order-sumary', component: OrderSumaryComponent}
 ]
