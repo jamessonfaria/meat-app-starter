@@ -9,7 +9,6 @@ import { ShoppingCartService } from "app/restaurant-detail/shopping-cart/shoppin
 import { OrderService } from "app/order/order.service";
 import { RestaurantService } from "app/restaurants/restaurants.service";
 
-
 @NgModule({
     declarations: [InputComponent, RatingComponent,RadioComponent],
     imports: [CommonModule, FormsModule, ReactiveFormsModule],
