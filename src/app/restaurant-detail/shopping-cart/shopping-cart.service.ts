@@ -28,7 +28,7 @@ export class ShoppingCartService {
 
   removeItem(item:CartItem){
     this.items.splice(this.items.indexOf(item), 1)
-    this.notificationService.notify(`Voce removeu o item ${item.menuItem.name}`)
+    this.notificationService.notify(`Voce removeu o item  ${item.menuItem.name}`)
   }
 
   total(): number{
