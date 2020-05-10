@@ -42,7 +42,9 @@ import { NotFoundComponent } from './not-found/not-found.component';
     SharedModule.forRoot(),
     BrowserAnimationsModule
   ],
-  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}, {provide: LOCALE_ID, useValue: 'pt-BR'}],
+  providers: [/*{provide: LocationStrategy, useClass: HashLocationStrategy},*/ 
+    {provide: LOCALE_ID, useValue: 'pt-BR'}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
