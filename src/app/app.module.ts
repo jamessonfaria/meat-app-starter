@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, LOCALE_ID } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { RouterModule, PreloadAllModules } from '@angular/router';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { ROUTES } from './app.routes';
 import { AppComponent } from './app.component';
@@ -35,7 +36,8 @@ import { SharedModule } from './shared/shared.module';
     BrowserModule,
     HttpModule,
     RouterModule.forRoot(ROUTES, {preloadingStrategy: PreloadAllModules}),
-    SharedModule.forRoot()
+    SharedModule.forRoot(),
+    BrowserAnimationsModule
   ],
   providers: [{provide: LOCALE_ID, useValue: 'pt-BR'}],
   bootstrap: [AppComponent]
