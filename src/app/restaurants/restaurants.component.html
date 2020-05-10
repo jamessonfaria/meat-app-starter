@@ -33,6 +33,12 @@
     </div>
     <!-- /.col -->
 
+    <div class="col-xs-12" *ngIf="restaurants?.length === 0">
+      <p class="lead text-center">
+        Não foram encontrados dados.
+      </p>
+    </div>
+
   </div>
 
 </section>
