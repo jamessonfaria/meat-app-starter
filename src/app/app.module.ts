@@ -19,6 +19,7 @@ import { ReviewsComponent } from './restaurant-detail/reviews/reviews.component'
 import { OrderSumaryComponent } from './order-sumary/order-sumary.component';
 import { SharedModule } from './shared/shared.module';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { LoginComponent } from './security/login/login.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
     ReviewsComponent,
     OrderSumaryComponent,
     NotFoundComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
