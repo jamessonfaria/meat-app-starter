@@ -7,6 +7,8 @@ import { OrderService } from './order.service';
 import { RadioOption } from './../shared/radio/radio-option.model';
 import { Order, OrderItem } from './order.model';
 
+import 'rxjs/add/operator/do'
+
 @Component({
   selector: 'mt-order',
   templateUrl: './order.component.html'
@@ -26,6 +28,7 @@ export class OrderComponent implements OnInit {
   ]
 
   delivery: number = 8
+  orderId: string
 
   constructor(
     private orderService: OrderService, 
@@ -81,12 +84,19 @@ export class OrderComponent implements OnInit {
   checkOrder(order: Order){
     order.orderItems = this.cartItems()
       .map((item: CartItem) => new OrderItem(item.quantity, item.menuItem.id))
-    this.orderService.checkOrder(order).subscribe((orderId: string) => {
-      this.router.navigate(['/order-sumary'])
-      console.log(`Compra concluida: ${orderId}`)
-      this.orderService.clear()
+    this.orderService.checkOrder(order)
+      .do((orderId: string) => {
+        this.orderId = orderId
+      })
+      .subscribe((orderId: string) => {
+        this.router.navigate(['/order-sumary'])
+        this.orderService.clear()
     })
     console.log(order)
+  }
+
+  isOrderCompleted(): boolean {
+    return this.orderId !== undefined
   }
 
 }
