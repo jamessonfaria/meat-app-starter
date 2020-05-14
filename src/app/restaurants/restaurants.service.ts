@@ -6,7 +6,6 @@ import 'rxjs/add/operator/catch'
 
 import { MEAT_API } from './../app.api';
 import { Restaurant } from './restaurant/restaurant.model';
-import { ErrorHandler } from './../app.error-handler';
 import { MenuItem } from 'app/restaurant-detail/menu-item/menu-item.model';
 
 @Injectable()
@@ -19,7 +18,7 @@ export class RestaurantService {
         if(search){
             params = new HttpParams().set('q', search)
         }
-        return this.http.get<Restaurant[]>(`${MEAT_API}/restaurants`, 
+        return this.http.get<Restaurant[]>(`${MEAT_API}/restaurantss`, 
             {params: params})
     }
 
