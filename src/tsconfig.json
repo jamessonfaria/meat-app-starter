@@ -18,6 +18,9 @@
       "../node_modules/@types"
     ]
   },
+  "angularCompileOptions": {
+    "preserveWhiteSpaces": true
+  },
   "exclude": [
     "test.ts",
     "**/*.spec.ts"
