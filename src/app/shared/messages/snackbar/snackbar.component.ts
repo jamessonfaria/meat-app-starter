@@ -15,11 +15,11 @@ import { NotificationService } from './../notification.service';
     trigger('snack-visibility', [
       state('hidden', style({
           opacity: 0,
-          botton: '0px'
+          bottom: '0px'
       })),
       state('visible', style({
           opacity: 1,
-          botton: '30px'
+          bottom: '30px'
       })),
       transition('hidden => visible', animate('500ms 0s ease-in')),
       transition('visible => hidden', animate('500ms 0s ease-out'))

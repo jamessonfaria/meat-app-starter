@@ -1,9 +1,12 @@
-import { LocationStrategy, HashLocationStrategy } from '@angular/common';
+import { LocationStrategy, HashLocationStrategy, registerLocaleData } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, ErrorHandler, LOCALE_ID } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, PreloadAllModules } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import localePt from '@angular/common/locales/pt'
+
+registerLocaleData(localePt, 'pt')
 
 import { ROUTES } from './app.routes';
 import { AppComponent } from './app.component';
@@ -48,7 +51,7 @@ import { ApplicationErrorHandler } from './app.error-handler';
     BrowserAnimationsModule
   ],
   providers: [/*{provide: LocationStrategy, useClass: HashLocationStrategy},*/ 
-    {provide: LOCALE_ID, useValue: 'pt-BR'},
+    {provide: LOCALE_ID, useValue: 'pt'},
     {provide: ErrorHandler, useClass: ApplicationErrorHandler}],
   bootstrap: [AppComponent]
 })

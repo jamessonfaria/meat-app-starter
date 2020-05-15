@@ -8,7 +8,7 @@ import { MenuItem } from './menu-item.model';
   templateUrl: './menu-item.component.html',
   animations: [
     trigger('menuItemAppeared', [
-      state('ready', style({opactity: 1})),
+      state('ready', style({opacity: 1})),
       transition('void => ready', [
         style({opacity: 0, transform: 'translate(-20px)'}),
         animate('300ms 0s ease-in')
